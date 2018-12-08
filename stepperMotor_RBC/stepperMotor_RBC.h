@@ -9,10 +9,10 @@
 #define stepperMotor
 #include "Arduino.h"
 
-class stepperMotor
+class StepperMotor
 {
 	public:
-	stepperMotor(int inone, int intwo, int inthree, int infore, int timedel);
+	StepperMotor(int inone, int intwo, int inthree, int infore, int timedel);
 	void waveDrive(int);
 	void fullStep(int);
 	void halfStep(int);
