@@ -1,13 +1,19 @@
 #include "Arduino.h"
 #include "stepperMotor_RBC.h"
 
-stepperMotor_RBC::stepperMotor_RBC(int _inone, int _intwo, int _inthre, int _infore, int_timedel)
+stepperMotor::stepperMotor(int inone, int intwo, int inthree, int infore, int timedel)
 {
 //The Setup
-  pinMode(_inone, OUTPUT);
-  pinMode(_intwo, OUTPUT);
-  pinMode(_inthree, OUTPUT);
-  pinMode(_infore, OUTPUT);
+  pinMode(inone, OUTPUT);
+  pinMode(intwo, OUTPUT);
+  pinMode(inthree, OUTPUT);
+  pinMode(infore, OUTPUT);
+  _inone = inone
+  _intwo = intwo
+  _inthree = inthree
+  _infore = infore 
+  _timedel = timedel
+  
 }
 
 /*
@@ -15,7 +21,7 @@ stepperMotor_RBC::stepperMotor_RBC(int _inone, int _intwo, int _inthre, int _inf
    make 4 times 11.25 degree of the rotor which is geared with a ratio of 64
    so 4*11.25 / 64 =~ 1/512
 */
-void stepperMotor_RBC::waveDrive(int steps)
+void stepperMotor::waveDrive(int steps)
 {
   for (int i = 0; i < steps; i++ ) {
     //1000 1
@@ -51,7 +57,7 @@ void stepperMotor_RBC::waveDrive(int steps)
    make 4 times 11.25 degree of the rotor which is geared with a ratio of 64
    so 4*11.25 / 64 =~ 1/512 same steps but doubled the torque!
 */
-void stepperMotor_RBC::fullStep(int steps) {
+void stepperMotor::fullStep(int steps) {
   for (int i = 0; i < steps; i++ ) {
     //1100 1
     digitalWrite(inone,   1);
@@ -85,7 +91,7 @@ void stepperMotor_RBC::fullStep(int steps) {
    make 4 times 11.25 degree of the rotor which is geared with a ratio of 64
    so 4*11.25 / 64 =~ 1/512 same steps but doubled the torque!
 */
-void stepperMotor_RBC::halfStep(int steps) {
+void stepperMotor::halfStep(int steps) {
   for (int i = 0; i < steps; i++ ) {
     //1000 1
     digitalWrite(inone,   1);
@@ -138,7 +144,7 @@ void stepperMotor_RBC::halfStep(int steps) {
   }
 }
 
-void stepperMotor_RBC::clearInputs() {
+void stepperMotor::clearInputs() {
   digitalWrite(inone, 0);
   digitalWrite(intwo, 0);
   digitalWrite(inthree, 0);
