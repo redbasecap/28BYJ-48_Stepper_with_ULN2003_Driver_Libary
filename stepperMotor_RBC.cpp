@@ -1,7 +1,7 @@
 #include "Arduino.h"
 #include "stepperMotor_RBC.h"
 
-stepperMotor::stepperMotor(int inone, int intwo, int inthree, int infore, int timedel)
+StepperMotor::StepperMotor(int inone, int intwo, int inthree, int infore, int timedel)
 {
 //The Setup
   pinMode(inone, OUTPUT);
@@ -21,7 +21,7 @@ stepperMotor::stepperMotor(int inone, int intwo, int inthree, int infore, int ti
    make 4 times 11.25 degree of the rotor which is geared with a ratio of 64
    so 4*11.25 / 64 =~ 1/512
 */
-void stepperMotor::waveDrive(int steps)
+void StepperMotor::waveDrive(int steps)
 {
   for (int i = 0; i < steps; i++ ) {
     //1000 1
@@ -57,7 +57,7 @@ void stepperMotor::waveDrive(int steps)
    make 4 times 11.25 degree of the rotor which is geared with a ratio of 64
    so 4*11.25 / 64 =~ 1/512 same steps but doubled the torque!
 */
-void stepperMotor::fullStep(int steps) {
+void StepperMotor::fullStep(int steps) {
   for (int i = 0; i < steps; i++ ) {
     //1100 1
     digitalWrite(_inone,   1);
@@ -91,7 +91,7 @@ void stepperMotor::fullStep(int steps) {
    make 4 times 11.25 degree of the rotor which is geared with a ratio of 64
    so 4*11.25 / 64 =~ 1/512 same steps but doubled the torque!
 */
-void stepperMotor::halfStep(int steps) {
+void StepperMotor::halfStep(int steps) {
   for (int i = 0; i < steps; i++ ) {
     //1000 1
     digitalWrite(_inone,   1);
@@ -144,7 +144,7 @@ void stepperMotor::halfStep(int steps) {
   }
 }
 
-void stepperMotor::clearInputs() {
+void StepperMotor::clearInputs() {
   digitalWrite(_inone, 0);
   digitalWrite(_intwo, 0);
   digitalWrite(_inthree, 0);

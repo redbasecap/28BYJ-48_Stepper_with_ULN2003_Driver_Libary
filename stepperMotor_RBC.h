@@ -7,16 +7,17 @@
 #ifndef STEPPER_MOTOR_H
 #define STEPPER_MOTOR_H
 #include "Arduino.h"
-class stepperMotor
+class StepperMotor
+
 {
-	public:
-	stepperMotor(int inone, int intwo, int inthree, int infore, int timedel);
-	void waveDrive(int);
-	void fullStep(int);
-	void halfStep(int);
-	void clearInputs();
-	private:
-	int _inone, _intwo, _inthree, _infore, _timedel;
+  public:
+    StepperMotor(int inone, int intwo, int inthree, int infore, int timedel);
+    void waveDrive(int);
+    void fullStep(int);
+    void halfStep(int);
+    void clearInputs();
+  private:
+    int _inone, _intwo, _inthree, _infore, _timedel;
 
 };
 
