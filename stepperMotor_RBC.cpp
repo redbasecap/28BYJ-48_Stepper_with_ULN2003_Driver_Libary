@@ -3,7 +3,7 @@
 
 StepperMotor::StepperMotor(int inone, int intwo, int inthree, int infore, int timedel)
 {
-//The Setup
+//The Setup and initalisation
   pinMode(inone, OUTPUT);
   pinMode(intwo, OUTPUT);
   pinMode(inthree, OUTPUT);
