@@ -28,11 +28,22 @@ or
     void loop() {
     }
     
-    ////////CODEEXAMPLE///////
+    //////// END CODEEXAMPLE///////
     
 4) The just use the 3 different modes 
-StepperMotor...
+Take a look at the DriveMethod.png (Source: https://www.youtube.com/watch?v=B86nqDRskVU by Bret Stateham) 
+StepperMotor... 
   -1) .waveDrive(100);
+	//Only a single coil is controlled per time.
+	//Low torque and precision but very easy to understand. 512 Steps/360 Degrees
+	
   -2) .fullStep(100);
+	//Two Coils active at a time
+	//Maximum Torque, Medium precision, 512 Steps/360 Degrees
+	
   -3) .halfStep(100);
+	//One or Two coils active at a time
+	//Medium Torque, Smallest step angle, 1024 Steps per 360 Degrees
+	
   -4) .clearInputs();
+	//Put all Digital Outputs to 0

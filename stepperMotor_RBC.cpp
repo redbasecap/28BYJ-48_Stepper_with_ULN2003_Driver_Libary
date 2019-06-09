@@ -19,7 +19,7 @@ StepperMotor::StepperMotor(int inone, int intwo, int inthree, int infore, int ti
 /*
    This function lets the step motor rotate in 512 steps. Because this 4 OUTPUT combinations
    make 4 times 11.25 degree of the rotor which is geared with a ratio of 64
-   so 4*11.25 / 64 =~ 1/512
+   so 4*11.25 / 64 =~ 1/512 per step
 */
 void StepperMotor::waveDrive(int steps)
 {
@@ -55,7 +55,7 @@ void StepperMotor::waveDrive(int steps)
 /*
    This function lets the step motor rotate in 512 steps. Because this 4 OUTPUT combinations
    make 4 times 11.25 degree of the rotor which is geared with a ratio of 64
-   so 4*11.25 / 64 =~ 1/512 same steps but doubled the torque!
+   so 4*11.25 / 64 =~ 1/512 per step. Same steps but doubled the torque!
 */
 void StepperMotor::fullStep(int steps) {
   for (int i = 0; i < steps; i++ ) {
@@ -89,7 +89,7 @@ void StepperMotor::fullStep(int steps) {
 /*
    This programm lets the step motor rotate in 512 steps. Because this 4 OUTPUT combinations
    make 4 times 11.25 degree of the rotor which is geared with a ratio of 64
-   so 4*11.25 / 64 =~ 1/512 same steps but doubled the torque!
+   so 4*(11.25/2) / 64 =~ 1/1024 per step. Double step per 360 degrees but a higher precision.
 */
 void StepperMotor::halfStep(int steps) {
   for (int i = 0; i < steps; i++ ) {
