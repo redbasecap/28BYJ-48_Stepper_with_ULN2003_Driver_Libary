@@ -30,7 +30,7 @@ or
     
     //////// END CODEEXAMPLE///////
     
-4) The just use the 3 different modes 
+4) Use on off the 3 different modes 
 Take a look at the DriveMethod.png (Source: https://www.youtube.com/watch?v=B86nqDRskVU by Bret Stateham) 
 StepperMotor... 
   -1) .waveDrive(100);
